@@ -18,13 +18,18 @@ def logging_test(logger):
     #  you would log at that level:
     #
     # debug
+    logger.debug('Debuging something')
     # info
+    logger.info('The result should be {"Roles": "admin"}')
     # warning
+    logger.warning('The constant value should be uppercase')
     # level = logging.WARN + 5 (custom log level between WARN and ERROR)
-    # error
-    # critical or fatal
     level = logging.WARN + 5  # custom log level
-    print("You forgot to write logging_test")
+    logger.log(level, f"This is fail on level {level}")
+    # error
+    logger.error('Cannot connect to the database')
+    # critical or fatal
+    logger.critical('File name "data.txt" could not be found')
 
 
 def simple_config():
