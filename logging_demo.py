@@ -9,10 +9,13 @@ For details, see: https://docs.python.org/3/library/logging.html
 """
 import logging
 
+
 def logging_test(logger):
-    """Log messages using each of the standard logging levels 
-       plus 1 custom log level.
-    """ 
+    """
+    Log messages using each of the standard logging levels
+
+    plus 1 custom log level.
+    """
     # debug
     logger.debug('Debuging something')
     # info
@@ -32,7 +35,7 @@ def simple_config():
     """Configure logging using basicConfig for simple configuration.
 
     You should call this before creating any logging objects.
-    You can call basicConfig only once. 
+    You can call basicConfig only once.
 
     Some named attributes you can set using basicConfig are:
 
@@ -57,7 +60,7 @@ def my_config():
     FORMAT = '%(name)s %(funcName)s %(levelname)s: %(message)s'
     LEVEL = 8
     logging.basicConfig(format=FORMAT, level=logging.DEBUG + LEVEL,
-            filename="mylog.log", filemode='w')
+                        filename="mylog.log", filemode='w')
 
 
 if __name__ == "__main__":
@@ -72,7 +75,7 @@ if __name__ == "__main__":
     # simple_config()
 
     # 3. my_config() write your own logging configuration as
-    #    described in the assignment. 
+    #    described in the assignment.
     #    Comment out the above calls to simple_config and basicConfig.
     my_config()
 
@@ -81,3 +84,7 @@ if __name__ == "__main__":
     logger.setLevel(logging.WARN)
     print("Logging to ", str(logger))
     logging_test(logger)
+
+    mylogger = logging.getLogger("myname")
+    mylogger.setLevel(logging.DEBUG)
+    logging_test(mylogger)
