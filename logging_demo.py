@@ -78,10 +78,6 @@ if __name__ == "__main__":
 
     # Log some messages to the root logger using different logging levels.
     logger = logging.getLogger()
+    logger.setLevel(logging.WARN)
     print("Logging to ", str(logger))
     logging_test(logger)
-
-
-    # TODO create a named logger, set a a custom log threshold,
-    #       and call logging_test again with your named logger.
-

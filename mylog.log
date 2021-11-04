@@ -1,4 +1,3 @@
-root logging_test INFO: The result should be {"Roles": "admin"}
 root logging_test WARNING: The constant value should be uppercase
 root logging_test Level 35: This is fail on level 35
 root logging_test ERROR: Cannot connect to the database
